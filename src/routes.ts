@@ -3,7 +3,11 @@ import { Router, Request, Response } from 'express';
 const router = Router();
 
 router.get('/teste', (req: Request, res: Response) => {
-    return res.json({ ok: "Estou rodando, HELLOO WORLDDDDDD CARALHOOOO" })
+    // throw new Error('Erro ao fazer essa requisição!')
+    return res.json({
+        nome: 'Gustavo Henrique',
+        função: 'Dev front-end'
+    })
 })
 
 export { router };
