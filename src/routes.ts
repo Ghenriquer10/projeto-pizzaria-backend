@@ -1,13 +1,13 @@
-import { Router, Request, Response } from 'express';
+import { Router } from 'express';
+
+import { CreateUserCrontroller } from './controllers/user/CreateUserCrontroller';
+import { AuthUserController } from './controllers/user/AuthUserController';
 
 const router = Router();
 
-router.get('/teste', (req: Request, res: Response) => {
-    // throw new Error('Erro ao fazer essa requisição!')
-    return res.json({
-        nome: 'Gustavo Henrique',
-        função: 'Dev front-end'
-    })
-})
+// Rotas users do controller
+router.post('/users', new CreateUserCrontroller().handle)
+
+router.post('/session', new AuthUserController().handle)
 
 export { router };
