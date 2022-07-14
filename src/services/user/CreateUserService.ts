@@ -1,4 +1,4 @@
-import prismaClient from '../../prisma/inidex'
+import prismaClient from '../../prisma'
 import { hash } from 'bcryptjs';
 
 // É nos services onde fica toda a lógica para como o BD
