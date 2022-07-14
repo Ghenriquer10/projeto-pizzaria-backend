@@ -4,10 +4,12 @@ import { CreateUserCrontroller } from './controllers/user/CreateUserCrontroller'
 import { AuthUserController } from './controllers/user/AuthUserController';
 import { DetailUserController } from './controllers/user/DetailUserController';
 import { isAuthenticated } from './middlewares/isAuthenticated';
+import { CreateCategoryController } from './controllers/category/CreateCategoryController';
 
 const router = Router();
 
-// Rotas users do controller
+// --------------------------------------------------- Rotas USERS -----------------------------------------------
+
 // Criando novos usuários
 router.post('/users', new CreateUserCrontroller().handle)
 
@@ -18,5 +20,9 @@ router.post('/session', new AuthUserController().handle)
 // Criando também um middleware para verificar se o token do usuário está correto
 router.get('/userinfo', isAuthenticated, new DetailUserController().handle)
 
+// --------------------------------------------------- Rotas CATEGORY --------------------------------------------
+
+// Cadastrando novo produto
+router.post('/category', isAuthenticated, new CreateCategoryController().handle)
 
 export { router };
