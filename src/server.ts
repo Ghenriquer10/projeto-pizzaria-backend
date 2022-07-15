@@ -11,6 +11,7 @@ app.use(cors())
 
 app.use(router)
 
+// Lógica para rotas de imagens dos produtos
 app.use(
     '/files',
     express.static(path.resolve(__dirname, '..', 'tmp'))
