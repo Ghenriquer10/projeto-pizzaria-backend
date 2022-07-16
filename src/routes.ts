@@ -15,6 +15,7 @@ import { CreateOrderController } from './controllers/order/CreateOrderController
 import { RemoveOrderController } from './controllers/order/RemoveOrderController';
 import { AddItemController } from './controllers/order/AddItemController';
 import { RemoveItemController } from './controllers/order/RemoveItemController';
+import { SendOrderController } from './controllers/order/SendOrderController';
 
 
 const router = Router();
@@ -60,5 +61,6 @@ router.post('/order/item', isAuthenticated, new AddItemController().handle)
 // Removendo itens do pedido
 router.delete('/order/remove', isAuthenticated, new RemoveItemController().handle)
 
-
+// Enviando pedido a cozinha
+router.put('/order/send', isAuthenticated, new SendOrderController().handle)
 export { router };
