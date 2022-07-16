@@ -12,7 +12,7 @@ Dentre as tecs também foram utilizados o Insominia, para monitorar as requisiç
 
 Dentre os dados persistidos estão o cadastro do usuário do sistema, com criptografia de senha no banco e o uso de JWT para geração de token a usuários autenticados, dando permissão de apenas estes poderem realizar alterações no sistema.
 
-Além do usuário também serão peristidos dados de produtos, categorias de produtos, pedidos e itens dos pedidos.
+Além do usuário também serão persistidos dados de produtos, categorias de produtos, pedidos e itens dos pedidos.
 
 ## Relacionamentos:
 
