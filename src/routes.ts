@@ -17,6 +17,7 @@ import { AddItemController } from './controllers/order/AddItemController';
 import { RemoveItemController } from './controllers/order/RemoveItemController';
 import { SendOrderController } from './controllers/order/SendOrderController';
 import { ListOrderController } from './controllers/order/ListOrderController';
+import { DetailOrderController } from './controllers/order/DetailOrderController';
 
 
 const router = Router();
@@ -68,5 +69,8 @@ router.put('/order/send', isAuthenticated, new SendOrderController().handle)
 
 // Listando pedidos da cozinha
 router.get('/orders', isAuthenticated, new ListOrderController().handle)
+
+// Listando detalhes dos pedidos
+router.get('/order/detail', isAuthenticated, new DetailOrderController().handle)
 
 export { router };
