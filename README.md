@@ -8,6 +8,8 @@ Após os produtos estarem selecionados, o mesmo é enviado como rascunho e statu
 
 O backend foi desenvolvido em Node.js e utilizado o banco Postgres para a perstistência de dados. Também foi utilizado Prisma ORM para a conexão entre o Node e o banco de dados, além da manipulação das tabelas e inserção de dados.
 
+Dentre as tecs também foram utilizados o Insominia, para monitorar as requisições APIrest entre o Node e o Postgres, e o Beekeeper studio para as altetrações no banco. 
+
 Dentre os dados persistidos estão o cadastro do usuário do sistema, com criptografia de senha no banco e o uso de JWT para geração de token a usuários autenticados, dando permissão de apenas estes poderem realizar alterações no sistema.
 
 Além do usuário também serão peristidos dados de produtos, categorias de produtos, pedidos e itens dos pedidos.
