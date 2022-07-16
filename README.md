@@ -2,7 +2,7 @@
 
 ## Back end do projeto em que estou estudando atualmente através do curso UDEMY, com as tecs: React, Node.js, React Native e Typescript.
 
-O projeto funciona em torno de um sistetma de pizzaria, onde haverá um dispositivo web na cozinha que receberá os pedidos a serem feitos e entregues, e um dispositivo mobile para o garçom que fará o login e após a autenticação terá disponível as opções de selecionar a mesa, o nome do cliente e os itens escolhidos por ele. 
+O projeto funciona em torno de um sistema de pizzaria, onde haverá um dispositivo web na cozinha que receberá os pedidos a serem feitos e entregues, e um dispositivo mobile para o garçom que fará o login e após a autenticação terá disponível as opções de selecionar a mesa, o nome do cliente e os itens escolhidos por ele. 
 
 Após os produtos estarem selecionados o mesmo é enviado como rascunho e status de não finalizado, onde ficará assim até o pedido ficar pronto.
 
