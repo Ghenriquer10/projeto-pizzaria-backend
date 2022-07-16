@@ -11,13 +11,14 @@ import { CreateCategoryController } from './controllers/category/CreateCategoryC
 import { ListCategoryController } from './controllers/category/ListCategoryController';
 import { CreateProductController } from './controllers/product/CreateProductController';
 import { ListByCategoryController } from './controllers/product/ListByCategoryController';
+import { CreateOrderController } from './controllers/order/CreateOrderController';
 
 
 const router = Router();
 
 const upload = multer(uploadConfig.upload("./tmp"))
 
-// --------------------------------------------------- Rotas USERS -----------------------------------------------
+// --------------------------------------------------- Rotas USERS -----------------------------------------------//
 
 // Criando novos usuários
 router.post('/users', new CreateUserCrontroller().handle)
@@ -29,7 +30,7 @@ router.post('/session', new AuthUserController().handle)
 // Criando também um middleware para verificar se o token do usuário está correto
 router.get('/userinfo', isAuthenticated, new DetailUserController().handle)
 
-// --------------------------------------------------- Rotas CATEGORY --------------------------------------------
+// --------------------------------------------------- Rotas CATEGORY --------------------------------------------//
 
 // Cadastrando nova categoria de produto
 router.post('/category', isAuthenticated, new CreateCategoryController().handle)
@@ -37,11 +38,13 @@ router.post('/category', isAuthenticated, new CreateCategoryController().handle)
 // Listando nova categoria de produto
 router.get('/category', isAuthenticated, new ListCategoryController().handle)
 
-// --------------------------------------------------- Rotas PRODUCT ---------------------------------------------
+// --------------------------------------------------- Rotas PRODUCT ---------------------------------------------//
 // Cadastrando novo produto
 router.post('/product', isAuthenticated, upload.single('file'), new CreateProductController().handle)
 
 router.get('/category/product', isAuthenticated, new ListByCategoryController().handle)
 
+// --------------------------------------------------- Rotas ORDER -----------------------------------------------//
+router.post('/order', isAuthenticated, new CreateOrderController().handle)
 
 export { router };
