@@ -16,6 +16,7 @@ import { RemoveOrderController } from './controllers/order/RemoveOrderController
 import { AddItemController } from './controllers/order/AddItemController';
 import { RemoveItemController } from './controllers/order/RemoveItemController';
 import { SendOrderController } from './controllers/order/SendOrderController';
+import { ListOrderController } from './controllers/order/ListOrderController';
 
 
 const router = Router();
@@ -46,6 +47,7 @@ router.get('/category', isAuthenticated, new ListCategoryController().handle)
 // Cadastrando novo produto
 router.post('/product', isAuthenticated, upload.single('file'), new CreateProductController().handle)
 
+// Listando produto por categoria
 router.get('/category/product', isAuthenticated, new ListByCategoryController().handle)
 
 // --------------------------------------------------- Rotas ORDER -----------------------------------------------//
@@ -63,4 +65,8 @@ router.delete('/order/remove', isAuthenticated, new RemoveItemController().handl
 
 // Enviando pedido a cozinha
 router.put('/order/send', isAuthenticated, new SendOrderController().handle)
+
+// Listando pedidos da cozinha
+router.get('/orders', isAuthenticated, new ListOrderController().handle)
+
 export { router };
