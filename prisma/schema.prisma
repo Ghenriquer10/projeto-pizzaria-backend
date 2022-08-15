@@ -10,7 +10,7 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-//Criar uma migration: yarn prisma migrate dev
+//Criar uma migration: yarn prisma migrate dev OU npx prisma db push --preview-feature
 model User {
   id         String    @id @default(uuid())
   name       String
@@ -29,6 +29,7 @@ model Category {
   created_up DateTime? @default(now())
 
   products Product[]
+
   @@map("tb_categories")
 }
 
@@ -44,6 +45,7 @@ model Product {
   category    Category @relation(fields: [category_id], references: [id])
   category_id String
   Item        Item[]
+
   @@map("tb_products")
 }
 
@@ -56,8 +58,8 @@ model Order {
   created_at DateTime? @default(now())
   created_up DateTime? @default(now())
 
-
   items Item[]
+
   @@map("tb_orders")
 }
 
@@ -67,10 +69,10 @@ model Item {
   created_at DateTime? @default(now())
   created_up DateTime? @default(now())
 
-
   order      Order   @relation(fields: [order_id], references: [id])
   product    Product @relation(fields: [product_id], references: [id])
   order_id   String
   product_id String
+
   @@map("tb_items")
 }
