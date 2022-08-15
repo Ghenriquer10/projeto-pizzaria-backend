@@ -1,10 +1,9 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "main": "index.js",
-  "license": "MIT",
+  "main": "server.ts",
   "scripts": {
-    "start": "./src/server.ts"
+    "start": "ts-node-dev src/server.ts"
   },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.2",
