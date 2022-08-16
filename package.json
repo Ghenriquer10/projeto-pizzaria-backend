@@ -6,9 +6,7 @@
     "node": "16.14.0"
   },
   "scripts": {
-    "start": "node src/server.js",
-    "build": "tsc --build",
-    "clean": "tsc --build --clean"
+    "start": "node src/server.js"
   },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.2",
