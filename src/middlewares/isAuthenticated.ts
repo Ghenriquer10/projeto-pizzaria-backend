@@ -5,6 +5,9 @@ interface Payload {
     sub: string
 }
 
+interface ProcessEnv {
+}
+
 export function isAuthenticated(
     req: Request,
     res: Response,
