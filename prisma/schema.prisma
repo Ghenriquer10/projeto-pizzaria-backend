@@ -7,7 +7,7 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_URL")
+  url      = env("DATABASE_URL_NEW")
 }
 
 //Criar uma migration: yarn prisma migrate dev OU npx prisma db push --preview-feature
